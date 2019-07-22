@@ -138,12 +138,19 @@ A metric specification defines a test of metric measurement. Here is an example 
 
 	---
 
-This flexible and extensible framework (described in more detail in ref: sqr-019) significantly lowers the barrier to allow developers to easily add and track algorithmic and scientific metrics. Production system engineers can also specify metrics relating to non-algorithmic quantities, such as execution time or memory usage. Instrumenting our code to produce metrics that are dispatched to our centralised metric curation service (described below) is a central part of our strategy for ensuring on an automated ongoing basis that everything is functioning as expected and that there are no regressions in performance. 
+This flexible and extensible framework (described in more detail in `SQR-019 <https://sqr-019.lsst.io>`_ ) significantly lowers the barrier to allow developers to easily add and track algorithmic and scientific metrics. Production system engineers can also specify metrics relating to non-algorithmic quantities, such as execution time or memory usage. Instrumenting our code to produce metrics that are dispatched to our centralised metric curation service (described below) is a central part of our strategy for ensuring on an automated ongoing basis that everything is functioning as expected and that there are no regressions in performance. 
 
 Metrics curation and monitoring (Squash)
 ----------------------------------------
 
-Calculating metrics is all very well and good, but in order to make use of them we need to monitor them and make them available for analysis. Historically we envisaged a single web application (based on Django) for both of these functions, our in-house Science Quality Analysis Harness (Squash) . With the advent of nublado, our Jupyterlab-based notebook aspect of the LSST Science Platform (ref: sqr-018), we have restricted Squash to backend functions such as providing metrics curation APIs, storing metrics in the high-performance time-series database InfluxDB and are exposing data to  off-the-shelf system for scalar visualisation and monitoring (such as Chronograf, Grafana and Kapacitor). These allow us to perform short and long term trend analysis and issue alerts when there are metrics excursions.
+Calculating metrics is all very well and good, but in order to make use of them we need to monitor them and make them available for analysis. Historically we envisaged a single web application (based on Django) for both of these functions, our in-house Science Quality Analysis Harness (Squash). With the advent of nublado, our Jupyterlab-based notebook aspect of the LSST Science Platform (`sqr-018 <https://sqr-018.lsst.io>`_), we have restricted Squash to backend functions such as providing metrics curation APIs, storing metrics in the high-performance time-series database InfluxDB and are exposing data to off-the-shelf systems for scalar visualisation and monitoring (such as Chronograf, Grafana and Kapacitor). These allow us to perform short and long term trend analysis and issue alerts when there are metrics excursions.
+
+A further description of Squash and an explanatio of our metric curation architecture can be found in `sqr-009 <https://sqr-009.lsst.io>`_
+
+.. figure:: _static/squash.png
+      :name: Key metrics for the first half of 2019 that were dispatched to Squash from CFHT test data runs during automated integration runs, visualised through Chronograf, a display application used with InfluxDB 
+      :target: _static/squash.png
+
 
 
 

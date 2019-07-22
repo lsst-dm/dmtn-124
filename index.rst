@@ -42,13 +42,6 @@
 
 .. sectnum::
 
-.. TODO: Delete the note below before merging new content to the master branch.
-
-.. note::
-
-   **This technote is not yet published.**
-
-   A description of services that support quality control activities in LSST Data Management. 
 
 .. Add content here.
 .. Do not include the document title (it's automatically added from metadata.yaml).

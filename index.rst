@@ -66,7 +66,7 @@ Finally, in the list of quality control activities not discussed here is the tes
 A narrative overview
 ====================
 
-Let's walk through a "day in the life" example that calls out the various systems under discussion and provides context for how they come together to support the activities set out in the LSST Data Quality Assurance Plan (`LSE-63 <https://ls.st/lse-63>`_) [KSK: Was this ever baselined?  If not, it may raise more questions than it answers]. We will use the Science Pipelines codebase an an example as it provides the richest example of use of these services, but most of these are relevant to the whole of Data Management and increasingly, beyond. We will also use python code workflows for our examples as that forms the majority of our codebase and python skills can be assumed of all LSST developers and scientists. 
+Let's walk through a "day in the life" example that calls out the various systems under discussion and provides context for how they come together to support the activities set out in the LSST Data Quality Assurance Plan (`LSE-63 <https://ls.st/lse-63>`_). We will use the Science Pipelines codebase an an example as it provides the richest example of use of these services, but most of these are relevant to the whole of Data Management and increasingly, beyond. We will also use python code workflows for our examples as that forms the majority of our codebase and python skills can be assumed of all LSST developers and scientists. 
 
 At LSST Data Management we develop code using the git version control systems hosted on the Github repository management service. As Science Pipelines developers work on their various software packages they commit code on branches; our story begins when they are ready to release their feature by merging onto the master branch.
 
@@ -84,7 +84,7 @@ The docker containers built at the end of this process are further used as the b
 Verification Framework
 ----------------------
 
-We have defined a metrics verification framework with an API for dispatching the results to our metrics curation infrastructure. Metrics (which are any scalar quantity that can be calculated and which we wish track) have a definition specified in YAML. Here is an example of the definition for the key metric AM1 [KSK: one thing that trips people up is that the code definition of a metric measurement is not in the same place as the definition of the metric itself]:
+We have defined a metrics verification framework with an API for dispatching the results to our metrics curation infrastructure. Metrics (which are any scalar quantity that can be calculated and which we wish track) have a definition specified in YAML. Here is an example of the definition for the key metric AM1:
 
 
 .. code-block:: yaml
@@ -150,7 +150,7 @@ As part of the work done in the LSST Science Platform, the LSST TAP service will
 Automated notebook execution
 ----------------------------
 
-For more analytic flows, especially ones that correlate metrics values with astronomical data derived quantities or facility properties, it is clear that notebooks provide a superior environment for developing deep dive interactive analyses for quantities of interest. (example) [KSK: I don't know of an example]
+For more analytic flows, especially ones that correlate metrics values with astronomical data derived quantities or facility properties, it is clear that notebooks provide a superior environment for developing deep dive interactive analyses for quantities of interest.
 
 However, we don't wish to surrender the great value that there is in continuous monitoring without human intervention. We are therefore developing a harness for automated notebook execution using tokenized parameters and publication of data or reports from them. This also permits the automated publication of quality reports, such as Stack characterisation reports that accompany official software releases, as well as nightly summary reports that summarize machine-readable properties of observatory operations. The automated notebook-based publication system is described in `SQR-029 <https://sqr-029.lsst.io>`_.
 
